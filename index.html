@@ -9,16 +9,14 @@
 	<body>
 		<form action="http://127.0.0.1:5000/login" method="post">
 			<label for="fname">First name:</label><br />
-			<input type="text" id="fname" name="fname" value="John" /><br />
+			<input type="text" id="fname" name="fname"/><br />
 			<label for="lname">Last name:</label><br />
-			<input
-				type="text"
-				id="lname"
-				name="lname"
-				value="Doe"
-			/><br /><br />
+			<input type="text" id="lname" name="lname" /><br />
+			<label for="age">Age:</label><br />
+			<input type="text" id="age" name="age"/><br /><br />
 			<input type="submit" value="Submit" />
 		</form>
+		<div id="data"></div>
 	</body>
 	<script type="module">
 		const form = document.forms[0];
@@ -30,5 +28,12 @@
 				method: "post",
 			});
 		});
+
+
+		fetch("http://127.0.0.1:5000/get").then(async (a) => {
+			let data = await a.json()
+			console.log(data)
+			document.getElementById("data").innerHTML = data
+		})
 	</script>
 </html>
