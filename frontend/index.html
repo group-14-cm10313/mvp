@@ -1,0 +1,147 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- BOOTSTRAP IMPORTS START -->
+		<!-- CSS only -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<!-- JavaScript Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+		<link href="./css/form.css" rel="stylesheet" />
+		<link href="./css/input.css" rel="stylesheet" />
+		<link href="./css/welcome.css" rel="stylesheet" />
+		<link href="./css/user.css" rel="stylesheet" />
+		<link href="./css/button.css" rel="stylesheet" />
+		<link href="./css/index.css" rel="stylesheet" />
+		<!-- BOOTSTRAP IMPORTS END -->
+		<title>Form</title>
+	</head>
+	<body class="hidden">
+		<div class="hidden" id="gated-content">
+			<label id="username">
+				Welcome
+				<span id="ipt-user-profile"></span>!
+			</label>
+			<!-- <p>
+				You're seeing this content because you're currently
+				<strong>logged in</strong>.
+			</p>
+			<label>
+				Access token:
+				<pre id="ipt-access-token"></pre>
+			</label> -->
+		</div>
+		<form id="caffeine-form" class="hidden">
+			<label for="start">Start date:</label>
+			<input type="date" name="start-date"id="start" />
+			<br/>
+			<label for="caffeine">
+				How much caffeine did you consume in total yesterday (mg)? </label
+			><br />
+			<input
+				required
+				type="number"
+				id="caffeine"
+				name="caffeine"
+				min="0"
+				max="1000"
+				placeholder="0"
+			/><br />
+			<br />
+
+			Add your individual caffinated drinks:
+			<div class="button-container">
+				<button class="form-button" id="add">+</button>
+				<button class="form-button" id="remove">-</button>
+			</div>
+
+			<div id="form"></div>
+
+			Sleep<br />
+
+			<label for="sleepTime">
+				At what time did you go to sleep last night? </label
+			><br />
+			<input required type="time" id="sleepTime" name="sleepTime" /><br />
+			<br />
+
+			<label for="wakeTime">
+				At what time did you wake up this morning? </label
+			><br />
+			<input required type="time" id="wakeTime" name="wakeTime" /><br />
+			<br />
+
+			<label for="toSleep">
+				How long did it take you to get to sleep last night? </label
+			><br />
+			<input
+				list="options"
+				name="toSleep"
+				placeholder="please select an option..."
+			/>
+			<datalist id="options">
+				<option value="Almost no time"></option>
+				<option value="Not too long"></option>
+				<option value="Quite some time"></option>
+				<option value="A very long time"></option></datalist
+			><br />
+			<br />
+
+			<label for="sleepQuality">
+				How would you rate your quality of sleep last night on a scale
+				of 1-5? (1 - very poor, 5 - excellent)</label
+			><br />
+			<input
+				required
+				type="number"
+				id="sleepQuality"
+				name="sleepQuality"
+				min="1"
+				max="5"
+				placeholder="1"
+			/><br />
+			<br />
+
+			<input class="auth-button log" type="submit" value="Submit" />
+			<button
+				class="auth-button reg"
+				id="btn-logout"
+				disabled="true"
+				onclick="logout()"
+			>
+				Log out
+			</button>
+		</form>
+
+		<div id="welcome-message-container">
+			<div id="welcome">
+				<div id="welcome-message">
+					Welcome your own personal caffeine tracker!
+				</div>
+				<button
+					class="auth-button log"
+					id="btn-login"
+					disabled="true"
+					onclick="login()"
+				>
+					Log in
+				</button>
+			</div>
+		</div>
+
+		<script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
+		<div id="data"></div>
+		<script src="./js/formLogic.js"></script>
+		<script src="./js/auth.js"></script>
+	</body>
+</html>

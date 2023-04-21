@@ -1,0 +1,24 @@
+#welcome-message-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    height: 100%;
+    margin: 0 2rem;
+}
+
+#welcome {
+	border: 1px solid rgba(104, 85, 224, 1);
+	box-shadow: 0 0 200px rgba(104, 85, 224, 0.2);
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    padding: 1rem;
+}
+
+#welcome-message {
+	margin-bottom: 1rem;
+	font-weight: bold;
+	font-size: xx-large;
+}

@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+select {
+    margin-right: 1rem;
+}
+
+label {
+    margin-right: 0.2rem;
+}
+
+.hidden {
+    display: none!important;
+}
